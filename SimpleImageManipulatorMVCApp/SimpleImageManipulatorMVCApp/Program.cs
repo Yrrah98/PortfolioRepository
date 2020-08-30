@@ -21,9 +21,9 @@ namespace SimpleImageManipulatorMVCApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form PhotoLibrary = new PhotoLibrary();
-            IModelDatabase ModelDatabase = new ModelDatabase();
             IController Controller = new Controller();
+            IModelDatabase ModelDatabase = new ModelDatabase();
+            Form PhotoLibrary = new PhotoLibrary(Controller.AddData);
             Controller.Initialise(PhotoLibrary, ModelDatabase);
 
         }
