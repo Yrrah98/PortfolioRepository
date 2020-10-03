@@ -1,0 +1,13 @@
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\Model.dll
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\Model.pdb
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\obj\Debug\Model.dll
+C:\Users\Harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\obj\Debug\Model.pdb
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\ImageProcessor.dll
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\System.ValueTuple.dll
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\ImageProcessor.xml
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\System.ValueTuple.xml
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\obj\Debug\Model.csproj.CopyComplete
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\ControllerLibrary.dll
+C:\users\harry\source\repos\PortfolioRepository\SimpleImageManipulatorMVCApp\Model\bin\Debug\ControllerLibrary.pdb
