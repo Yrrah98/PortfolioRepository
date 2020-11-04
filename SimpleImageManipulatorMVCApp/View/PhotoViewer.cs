@@ -22,6 +22,9 @@ namespace View
         // VARIABLE to store an action to resize the image, takes String and Size parameters
         private Action<String, int, Size> _resizeImage;
 
+        // VARIABLE to store an action to resize the image, takes String and Size parameters
+        private Action<String, Image, int, Size> _resizeImage2;
+
 
         public PictureBox PB1 { get { return pictureBox1; } }
 
@@ -32,13 +35,13 @@ namespace View
             InitializeComponent();
         }
 
-        public void Initialise(ExecuteDelegate pExecute, String pKey, int pFormNum, Action<String, int, Size> resizeImage) 
+        public void Initialise(ExecuteDelegate pExecute, String pKey, int pFormNum, Action<String, Image,int, Size> resizeImage) 
         {
             _execute = pExecute;
 
             _imgKey = pKey;
 
-            _resizeImage = resizeImage;
+            _resizeImage2 = resizeImage;
 
             FormNumber = pFormNum;
         }

@@ -86,4 +86,65 @@ namespace ControllerLibrary.Commands
             _action(_data, _dataS);
         }
     }
+
+    public class Command<T, S, U> : ICommand 
+    {
+        // Action variable, accepts T parameters
+        private Action<T, S, U> _action;
+        // Variable of type T
+        private T _dataT;
+        // Variable of type S
+        private S _dataS;
+        // Variable of type U
+        private U _dataU;
+
+        public Command(Action<T, S, U> action, T dataT, S dataS, U dataU) 
+        {
+            _action = action;
+
+            _dataT = dataT;
+
+            _dataS = dataS;
+
+            _dataU = dataU;
+        }
+
+        public void Execute() 
+        {
+            _action(_dataT, _dataS, _dataU);
+        }
+    }
+    public class Command<T, S, U, V> : ICommand
+    {
+        // Action variable, accepts T parameters
+        private Action<T, S, U, V> _action;
+        // Variable of type T
+        private T _dataT;
+        // Variable of type S
+        private S _dataS;
+        // Variable of type U
+        private U _dataU;
+        // Variable of type U
+        private V _dataV;
+
+
+        public Command(Action<T, S, U, V> action, T dataT, S dataS, U dataU,
+            V dataV)
+        {
+            _action = action;
+
+            _dataT = dataT;
+
+            _dataS = dataS;
+
+            _dataU = dataU;
+
+            _dataV = dataV;
+        }
+
+        public void Execute()
+        {
+            _action(_dataT, _dataS, _dataU, _dataV);
+        }
+    }
 }

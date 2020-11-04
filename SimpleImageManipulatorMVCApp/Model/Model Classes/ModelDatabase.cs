@@ -60,6 +60,19 @@ namespace Model.Model_Classes
             // CALL to SendToPhotoViewer method
             SendToPhotoViewer(key, pFormCount);
         }
+
+        /// <summary>
+        /// OVERLOAD: Overloaded method of ResizeImage - used to resize an image and not affect the immutability of what is originally stored
+        /// Essentially, passing around the same copy of an image for editing rather than the editing the image in the database
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="pFormCount"></param>
+        /// <param name="size"></param>
+        public void ResizeImage(String key, Image img, int pFormCount, Size size) 
+        {
+
+            SendToPhotoViewer(key, _imgManipulator.ResizeImage(size, img), pFormCount);
+        }
         #endregion
 
         #region IModelPublisher methods
@@ -157,6 +170,13 @@ namespace Model.Model_Classes
             // the image database found at the key
             ImageArgs args = new ImageArgs(ImageDatabase[key].data);
             // CALL to the handler 
+            _photoViewHandlerCollection[key][pFormCount](this, args);
+        }
+
+        public void SendToPhotoViewer(String key, Image img, int pFormCount) 
+        {
+            ImageArgs args = new ImageArgs(img);
+
             _photoViewHandlerCollection[key][pFormCount](this, args);
         }
 

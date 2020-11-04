@@ -23,6 +23,8 @@ namespace Model.Interfaces
 
         #region ImageManipulation methods
         void ResizeImage(String key, int pFormCount, Size size);
+
+        void ResizeImage(String key, Image img,int pFormCount, Size size);
         #endregion
     }
 }
