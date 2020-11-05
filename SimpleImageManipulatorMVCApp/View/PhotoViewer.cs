@@ -90,8 +90,6 @@ namespace View
 
         private void FlipHorizontal_Click(object sender, EventArgs e)
         {
-            
-
             ICommand command = new Command<String, Image, int>(_flipH, _imgKey, PB1.Image, FormNumber);
 
             _execute(command);
