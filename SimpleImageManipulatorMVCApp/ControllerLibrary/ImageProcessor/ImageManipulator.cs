@@ -55,30 +55,18 @@ namespace ControllerLibrary.ImageProcessor
                 .Image;
         }
 
-        public Image RotateImageACW(Image img)
+        public Image RotateImageACW(Image img, float degrees)
         {
             return _imageFactory.Load(img)
-                .Rotate(-CircularRotate())
+                .Rotate(degrees)
                 .Image;
         }
 
-        public Image RotateImageCW(Image img)
+        public Image RotateImageCW(Image img, float degrees)
         {
             return _imageFactory.Load(img)
-                .Rotate(CircularRotate())
+                .Rotate(degrees)
                 .Image;
-        }
-
-
-
-        private float CircularRotate() 
-        {
-            if (_rotateVal < 360)
-                _rotateVal += 45;
-            else
-                _rotateVal = 45f;
-
-            return _rotateVal;
         }
     }
 }

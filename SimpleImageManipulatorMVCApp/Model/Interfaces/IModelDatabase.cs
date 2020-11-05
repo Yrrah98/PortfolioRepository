@@ -31,9 +31,9 @@ namespace Model.Interfaces
 
         void FlipVertical(String key, Image img, int pFormCount);
 
-        void RotateCW(String key, Image img, int pFormCount);
+        void RotateCW(String key, Image img, int pFormCount, float degrees);
 
-        void RotateACW(String key, Image img, int pFormCount); 
+        void RotateACW(String key, Image img, int pFormCount, float degrees); 
         #endregion
     }
 }

@@ -27,11 +27,13 @@ namespace View
         // VARIABLE to store an action to resize an image, takes string, img and int called _flipH
         private Action<String, Image, int> _flipH;
         // VARIABLE to store an action to resize an image, takes string, img and int called _rotateACW
-        private Action<String, Image, int> _rotateACW;
+        private Action<String, Image, int, float> _rotateACW;
         // VARIABLE to store an action to resize an image, takes string, img and int called _rotateCW
-        private Action<String, Image, int> _rotateCW;
-
-
+        private Action<String, Image, int, float> _rotateCW;
+        // VARIABLE to store an unrotated version of the image so as not to cause any problems
+        private Image _unrotatedImg;
+        // VARIABLE to store the current rotation of the image
+        private float _currentRotation;
         public PictureBox PB1 { get { return pictureBox1; } }
 
         public int FormNumber { get; set; }
@@ -42,7 +44,7 @@ namespace View
         }
 
         public void Initialise(ExecuteDelegate pExecute, String pKey, int pFormNum, Action<String, Image,int, Size> resizeImage,
-            Action<String, Image, int> flipH, Action<String, Image, int> flipV, Action<String, Image, int> rotateACW, Action<String, Image, int> rotateCW) 
+            Action<String, Image, int> flipH, Action<String, Image, int> flipV, Action<String, Image, int, float> rotateACW, Action<String, Image, int, float> rotateCW) 
         {
             _execute = pExecute;
 
@@ -59,6 +61,8 @@ namespace View
             _rotateACW = rotateACW;
 
             _rotateCW = rotateCW;
+
+            _unrotatedImg = pictureBox1.Image;
         }
 
         private void FlipVertical_Click(object sender, EventArgs e)
@@ -66,6 +70,8 @@ namespace View
             ICommand command = new Command<String, Image, int>(_flipV, _imgKey, PB1.Image, FormNumber);
 
             _execute(command);
+
+            UpdateImage();
         }
 
 
@@ -78,27 +84,47 @@ namespace View
         public void OnImageEvent(object source, EventArgs args) 
         {
             pictureBox1.Image = (args as ImageArgs)._img;
+
+
         }
 
         private void FlipHorizontal_Click(object sender, EventArgs e)
         {
+            
+
             ICommand command = new Command<String, Image, int>(_flipH, _imgKey, PB1.Image, FormNumber);
 
             _execute(command);
+
+            UpdateImage();
         }
 
         private void RotateR_Click(object sender, EventArgs e)
         {
-            ICommand command = new Command<String, Image, int>(_rotateCW, _imgKey, PB1.Image, FormNumber);
+            _currentRotation += 45f;
+
+            ICommand command = new Command<String, Image, int, float>(_rotateCW, _imgKey, _unrotatedImg, FormNumber, _currentRotation);
 
             _execute(command);
         }
 
         private void RotateL_Click(object sender, EventArgs e)
         {
-            ICommand command = new Command<String, Image, int>(_rotateACW, _imgKey, PB1.Image, FormNumber);
+            _currentRotation -= 45f;
+
+            ICommand command = new Command<String, Image, int, float>(_rotateACW, _imgKey, _unrotatedImg, FormNumber, _currentRotation);
 
             _execute(command);
+        }
+
+        /// <summary>
+        /// METHOD: The purpose of this method is to update the unrotated image
+        /// As rotating the same image causes problems. So we will save the image in a state of no rotation so 
+        /// when we want we can apply rotation to the unrotated version of it.
+        /// </summary>
+        private void UpdateImage() 
+        {
+            _unrotatedImg = pictureBox1.Image;
         }
     }
 }

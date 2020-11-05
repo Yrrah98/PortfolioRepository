@@ -84,14 +84,14 @@ namespace Model.Model_Classes
             SendToPhotoViewer(key, _imgManipulator.FlipHImage(img), pFormCount);
         }
 
-        public void RotateACW(String key, Image img, int pFormCount) 
+        public void RotateACW(String key, Image img, int pFormCount, float degrees) 
         {
-            SendToPhotoViewer(key, _imgManipulator.RotateImageACW(img), pFormCount);
+            SendToPhotoViewer(key, _imgManipulator.RotateImageACW(img, degrees), pFormCount);
         }
 
-        public void RotateCW(String key, Image img, int pFormCount)
+        public void RotateCW(String key, Image img, int pFormCount, float degrees)
         {
-            SendToPhotoViewer(key, _imgManipulator.RotateImageCW(img), pFormCount);
+            SendToPhotoViewer(key, _imgManipulator.RotateImageCW(img, degrees), pFormCount);
         }
         #endregion
 

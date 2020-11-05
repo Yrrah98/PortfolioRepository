@@ -12,9 +12,9 @@ namespace ControllerLibrary.ImageProcessor
 
         Image LoadImage(String filePath);
 
-        Image RotateImageACW(Image img);
+        Image RotateImageACW(Image img, float degrees);
 
-        Image RotateImageCW(Image img);
+        Image RotateImageCW(Image img, float degrees);
 
         Image FlipHImage(Image img);
 
