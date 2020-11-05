@@ -73,6 +73,26 @@ namespace Model.Model_Classes
 
             SendToPhotoViewer(key, _imgManipulator.ResizeImage(size, img), pFormCount);
         }
+
+        public void FlipVertical(String key, Image img, int pFormCount) 
+        {
+            SendToPhotoViewer(key, _imgManipulator.FlipVImage(img), pFormCount);
+        }
+
+        public void FlipHorizontal(String key, Image img, int pFormCount) 
+        {
+            SendToPhotoViewer(key, _imgManipulator.FlipHImage(img), pFormCount);
+        }
+
+        public void RotateACW(String key, Image img, int pFormCount) 
+        {
+            SendToPhotoViewer(key, _imgManipulator.RotateImageACW(img), pFormCount);
+        }
+
+        public void RotateCW(String key, Image img, int pFormCount)
+        {
+            SendToPhotoViewer(key, _imgManipulator.RotateImageCW(img), pFormCount);
+        }
         #endregion
 
         #region IModelPublisher methods
@@ -123,10 +143,10 @@ namespace Model.Model_Classes
 
         #region Public Methods
 
-        public void Initialise(ExecuteDelegate pExecute)
+        public void Initialise(ExecuteDelegate pExecute, ImageManipulator pImgManipulator)
         {
             // SET local ImageFactory var to new ImageFactory
-            _imgManipulator = new ImageManipulator();
+            _imgManipulator = pImgManipulator;
             // SET ExecuteDelegate in class to ExecuteDelegate passed in
             _execute = pExecute;
         }
@@ -141,16 +161,17 @@ namespace Model.Model_Classes
             String key = Guid.NewGuid().ToString();
             // ADD the key and data to the database
             ImageDatabase.Add(key, data);
-            // RESIZE the image to be a suitable thumbnail size
-            ImageDatabase[key].data = _imgManipulator.ResizeImage(size, ImageDatabase[key].data);
+            // Local Image called img, so as not to edit the original image
+            Image img = _imgManipulator.ResizeImage(size, ImageDatabase[key].data);
             // CALL to SendImage method, to broadcast the image to the listener
-            SendImage(ImageDatabase[key].data, key);
+            SendImage(img, key);
         }
 
         public void SendImage(Image img, String key) 
         {
-            // CREATE new NewImageArgs, passing imgn the image in the database found at the current key
-            NewImageArgs args = new NewImageArgs(ImageDatabase[key].data, key);
+            // CREATE new NewImageArgs, passing in the image passed to this method as a parameter and the key
+            // to access the image
+            NewImageArgs args = new NewImageArgs(img, key);
             // CALL _handlers passing this in as the source and the args as parameters
             _handlers(this, args);
         }

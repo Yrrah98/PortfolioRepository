@@ -1,4 +1,5 @@
 ﻿using ControllerLibrary;
+using ControllerLibrary.ImageProcessor;
 using Model.Model_Classes;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Model.Interfaces
     {
         IDictionary<String, IData> ImageDatabase { get; set; }
 
-        void Initialise(ExecuteDelegate pExecute);
+        void Initialise(ExecuteDelegate pExecute, ImageManipulator pImgManipulator);
 
         void AddData(String key, Size size);
 
@@ -24,7 +25,15 @@ namespace Model.Interfaces
         #region ImageManipulation methods
         void ResizeImage(String key, int pFormCount, Size size);
 
-        void ResizeImage(String key, Image img,int pFormCount, Size size);
+        void ResizeImage(String key, Image img, int pFormCount, Size size);
+
+        void FlipHorizontal(String key, Image img, int pFormCount);
+
+        void FlipVertical(String key, Image img, int pFormCount);
+
+        void RotateCW(String key, Image img, int pFormCount);
+
+        void RotateACW(String key, Image img, int pFormCount); 
         #endregion
     }
 }

@@ -66,7 +66,7 @@ namespace SimpleImageManipulatorMVCApp.Controller_classes
             // SET local modelDatabase variable to IModelDatabase parameter passed in
             modelDatabase = pModelDatabase;
             // INITIALISE the modelDatabase
-            modelDatabase.Initialise(Execute);
+            modelDatabase.Initialise(Execute, new ImageManipulator());
             // SET OpenFileDialog variable to new OpenFileDialog
             fileDialog = new OpenFileDialog();
             // SET multi-select to true for fileDialog, to allow multiple fials to be selected at once
@@ -111,7 +111,8 @@ namespace SimpleImageManipulatorMVCApp.Controller_classes
             // size of the forms picture box
             (modelDatabase as IPhotoviewerPublisher).SubscribePhotoviewer((pv as IPhotoviewerSubscriber).OnImageEvent, key, _formCount, pv.PB1.Size);
             // CALL to initialise method on the PhotoViewer
-            pv.Initialise(Execute, key, _formCount, modelDatabase.ResizeImage);
+            pv.Initialise(Execute, key, _formCount, modelDatabase.ResizeImage, modelDatabase.FlipHorizontal, modelDatabase.FlipVertical,
+                modelDatabase.RotateACW, modelDatabase.RotateCW);
             // CALL to Show method on the form
             pv.Show();
         }

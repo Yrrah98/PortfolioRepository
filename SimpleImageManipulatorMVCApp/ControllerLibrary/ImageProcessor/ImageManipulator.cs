@@ -18,12 +18,16 @@ namespace ControllerLibrary.ImageProcessor
 
         public Image FlipHImage(Image img)
         {
-            throw new NotImplementedException();
+            return _imageFactory.Load(img)
+                .Flip()
+                .Image;
         }
 
         public Image FlipVImage(Image img)
         {
-            throw new NotImplementedException();
+            return _imageFactory.Load(img)
+                .Flip(true)
+                .Image;
         }
 
         public Image LoadImage(string filePath)
@@ -48,12 +52,16 @@ namespace ControllerLibrary.ImageProcessor
 
         public Image RotateImageACW(Image img)
         {
-            throw new NotImplementedException();
+            return _imageFactory.Load(img)
+                .RotateBounded(-45f)
+                .Image;
         }
 
         public Image RotateImageCW(Image img)
         {
-            throw new NotImplementedException();
+            return _imageFactory.Load(img)
+                .RotateBounded(45f)
+                .Image;
         }
     }
 }

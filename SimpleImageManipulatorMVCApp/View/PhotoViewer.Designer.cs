@@ -45,6 +45,7 @@
             this.RotateL.TabIndex = 0;
             this.RotateL.Text = "Rotate Left";
             this.RotateL.UseVisualStyleBackColor = true;
+            this.RotateL.Click += new System.EventHandler(this.RotateL_Click);
             // 
             // RotateR
             // 
@@ -54,6 +55,7 @@
             this.RotateR.TabIndex = 1;
             this.RotateR.Text = "Rotate Right";
             this.RotateR.UseVisualStyleBackColor = true;
+            this.RotateR.Click += new System.EventHandler(this.RotateR_Click);
             // 
             // FlipHorizontal
             // 
@@ -63,6 +65,7 @@
             this.FlipHorizontal.TabIndex = 2;
             this.FlipHorizontal.Text = "Flip Horizontal";
             this.FlipHorizontal.UseVisualStyleBackColor = true;
+            this.FlipHorizontal.Click += new System.EventHandler(this.FlipHorizontal_Click);
             // 
             // FlipVertical
             // 
