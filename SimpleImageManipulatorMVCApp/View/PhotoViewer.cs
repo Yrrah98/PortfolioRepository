@@ -92,8 +92,6 @@ namespace View
             ICommand command = new Command<String, Image, int>(_rotateCW, _imgKey, PB1.Image, FormNumber);
 
             _execute(command);
-
-            
         }
 
         private void RotateL_Click(object sender, EventArgs e)

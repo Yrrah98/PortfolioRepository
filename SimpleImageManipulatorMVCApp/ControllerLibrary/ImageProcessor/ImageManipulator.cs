@@ -11,9 +11,14 @@ namespace ControllerLibrary.ImageProcessor
     public class ImageManipulator : IImageManipulator
     {
         private ImageFactory _imageFactory;
+
+        private float _rotateVal;
+
         public ImageManipulator() 
         {
-            _imageFactory = new ImageFactory();
+            _imageFactory = new ImageFactory(preserveExifData:false);
+
+            _rotateVal = 45f;
         }
 
         public Image FlipHImage(Image img)
@@ -53,15 +58,27 @@ namespace ControllerLibrary.ImageProcessor
         public Image RotateImageACW(Image img)
         {
             return _imageFactory.Load(img)
-                .RotateBounded(-45f)
+                .Rotate(-CircularRotate())
                 .Image;
         }
 
         public Image RotateImageCW(Image img)
         {
             return _imageFactory.Load(img)
-                .RotateBounded(45f)
+                .Rotate(CircularRotate())
                 .Image;
+        }
+
+
+
+        private float CircularRotate() 
+        {
+            if (_rotateVal < 360)
+                _rotateVal += 45;
+            else
+                _rotateVal = 45f;
+
+            return _rotateVal;
         }
     }
 }
