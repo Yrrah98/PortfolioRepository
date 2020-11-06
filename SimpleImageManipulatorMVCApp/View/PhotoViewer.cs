@@ -34,6 +34,11 @@ namespace View
         private Image _unrotatedImg;
         // VARIABLE to store the current rotation of the image
         private float _currentRotation;
+        // VARIABLE of type Queue to store a queue of command, not including rotation commands
+        private Queue<ICommand> _commandQueue;
+
+
+        private IList<ICommand> _commandList;
         public PictureBox PB1 { get { return pictureBox1; } }
 
         public int FormNumber { get; set; }
@@ -41,6 +46,10 @@ namespace View
         public PhotoViewer()
         {
             InitializeComponent();
+
+            _commandQueue = new Queue<ICommand>();
+
+            _commandList = new List<ICommand>();
         }
 
         public void Initialise(ExecuteDelegate pExecute, String pKey, int pFormNum, Action<String, Image,int, Size> resizeImage,
@@ -62,16 +71,18 @@ namespace View
 
             _rotateCW = rotateCW;
 
-            _unrotatedImg = pictureBox1.Image;
+            _unrotatedImg = PB1.Image;
         }
 
         private void FlipVertical_Click(object sender, EventArgs e)
         {
             ICommand command = new Command<String, Image, int>(_flipV, _imgKey, PB1.Image, FormNumber);
 
+            _commandList.Add(command);
+
             _execute(command);
 
-            UpdateImage();
+            
         }
 
 
@@ -84,33 +95,45 @@ namespace View
         public void OnImageEvent(object source, EventArgs args) 
         {
             pictureBox1.Image = (args as ImageArgs)._img;
-
-
         }
 
         private void FlipHorizontal_Click(object sender, EventArgs e)
         {
             ICommand command = new Command<String, Image, int>(_flipH, _imgKey, PB1.Image, FormNumber);
 
+            _commandList.Add(command);
+
             _execute(command);
 
-            UpdateImage();
+            
         }
 
         private void RotateR_Click(object sender, EventArgs e)
         {
-            _currentRotation += 45f;
+            CircularRotation();
 
-            ICommand command = new Command<String, Image, int, float>(_rotateCW, _imgKey, _unrotatedImg, FormNumber, _currentRotation);
+            _currentRotation += 90f;
+
+            pictureBox1.Image = _unrotatedImg;
+
+            PreRotation();
+
+            ICommand command = new Command<String, Image, int, float>(_rotateCW, _imgKey, pictureBox1.Image, FormNumber, _currentRotation);
 
             _execute(command);
         }
 
         private void RotateL_Click(object sender, EventArgs e)
         {
-            _currentRotation -= 45f;
+            CircularRotation();
 
-            ICommand command = new Command<String, Image, int, float>(_rotateACW, _imgKey, _unrotatedImg, FormNumber, _currentRotation);
+            _currentRotation -= 90f;
+
+            pictureBox1.Image = _unrotatedImg;
+
+            PreRotation();
+
+            ICommand command = new Command<String, Image, int, float>(_rotateACW, _imgKey, pictureBox1.Image, FormNumber, _currentRotation);
 
             _execute(command);
         }
@@ -123,6 +146,26 @@ namespace View
         private void UpdateImage() 
         {
             _unrotatedImg = pictureBox1.Image;
+        }
+
+        private void CircularRotation() 
+        {
+            if (_currentRotation >= 360) 
+            {
+                _currentRotation = 0;
+            }
+        }
+
+        private void PreRotation()
+        {
+            if (_commandList.Count > 0)
+            {
+
+                for (int i = 0; i < _commandList.Count; i++)
+                {
+                    _execute(_commandList[i]);
+                }
+            }
         }
     }
 }
