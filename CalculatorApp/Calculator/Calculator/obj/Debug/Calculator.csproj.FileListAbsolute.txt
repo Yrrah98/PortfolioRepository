@@ -1,0 +1,15 @@
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\CalculatorController.dll
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\CalculatorView.dll
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\CalculatorController.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\bin\Debug\CalculatorView.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyComplete

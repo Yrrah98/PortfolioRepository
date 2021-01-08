@@ -1,0 +1,8 @@
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\bin\Debug\CalculatorView.dll
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\bin\Debug\CalculatorView.pdb
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.csprojAssemblyReference.cache
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.Calculator.resources
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.csproj.GenerateResource.cache
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.csproj.CoreCompileInputs.cache
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.dll
+C:\Users\Harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorView\obj\Debug\CalculatorView.pdb

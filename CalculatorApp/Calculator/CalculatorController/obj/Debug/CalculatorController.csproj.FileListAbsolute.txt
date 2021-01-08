@@ -1,0 +1,9 @@
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\bin\Debug\CalculatorController.dll
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\bin\Debug\CalculatorController.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\bin\Debug\CalculatorView.dll
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\bin\Debug\CalculatorView.pdb
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\obj\Debug\CalculatorController.csprojAssemblyReference.cache
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\obj\Debug\CalculatorController.csproj.CoreCompileInputs.cache
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\obj\Debug\CalculatorController.csproj.CopyComplete
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\obj\Debug\CalculatorController.dll
+C:\users\harry\source\repos\PortfolioRepository\CalculatorApp\Calculator\CalculatorController\obj\Debug\CalculatorController.pdb

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{7367271A-F3E9-42A0-BE66-03EFA7E09397}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A35C26CA-94B8-40BC-8997-DA06BB769294} = {A35C26CA-94B8-40BC-8997-DA06BB769294}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorController", "CalculatorController\CalculatorController.csproj", "{A35C26CA-94B8-40BC-8997-DA06BB769294}"
 EndProject
