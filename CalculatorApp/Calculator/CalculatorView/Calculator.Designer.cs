@@ -45,6 +45,9 @@ namespace CalculatorView
             this.MultiplyBtn = new System.Windows.Forms.Button();
             this.ResetBtn = new System.Windows.Forms.Button();
             this.CalculationView = new System.Windows.Forms.TextBox();
+            this.DecimalBtn = new System.Windows.Forms.Button();
+            this.EqualsBtn = new System.Windows.Forms.Button();
+            this.PercentageBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OneBtn
@@ -153,27 +156,29 @@ namespace CalculatorView
             this.PlusBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlusBtn.Location = new System.Drawing.Point(238, 130);
             this.PlusBtn.Name = "PlusBtn";
-            this.PlusBtn.Size = new System.Drawing.Size(53, 50);
+            this.PlusBtn.Size = new System.Drawing.Size(53, 28);
             this.PlusBtn.TabIndex = 10;
             this.PlusBtn.Text = "+";
+            this.PlusBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.PlusBtn.UseVisualStyleBackColor = true;
             // 
             // SubtractBtn
             // 
             this.SubtractBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubtractBtn.Location = new System.Drawing.Point(238, 186);
+            this.SubtractBtn.Location = new System.Drawing.Point(238, 164);
             this.SubtractBtn.Name = "SubtractBtn";
-            this.SubtractBtn.Size = new System.Drawing.Size(53, 50);
+            this.SubtractBtn.Size = new System.Drawing.Size(53, 29);
             this.SubtractBtn.TabIndex = 11;
             this.SubtractBtn.Text = "-";
+            this.SubtractBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.SubtractBtn.UseVisualStyleBackColor = true;
             // 
             // DivideBtn
             // 
             this.DivideBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DivideBtn.Location = new System.Drawing.Point(238, 242);
+            this.DivideBtn.Location = new System.Drawing.Point(238, 199);
             this.DivideBtn.Name = "DivideBtn";
-            this.DivideBtn.Size = new System.Drawing.Size(53, 50);
+            this.DivideBtn.Size = new System.Drawing.Size(53, 27);
             this.DivideBtn.TabIndex = 12;
             this.DivideBtn.Text = "/";
             this.DivideBtn.UseVisualStyleBackColor = true;
@@ -181,9 +186,9 @@ namespace CalculatorView
             // MultiplyBtn
             // 
             this.MultiplyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MultiplyBtn.Location = new System.Drawing.Point(238, 298);
+            this.MultiplyBtn.Location = new System.Drawing.Point(238, 232);
             this.MultiplyBtn.Name = "MultiplyBtn";
-            this.MultiplyBtn.Size = new System.Drawing.Size(53, 50);
+            this.MultiplyBtn.Size = new System.Drawing.Size(53, 27);
             this.MultiplyBtn.TabIndex = 13;
             this.MultiplyBtn.Text = "*";
             this.MultiplyBtn.UseVisualStyleBackColor = true;
@@ -200,6 +205,7 @@ namespace CalculatorView
             // 
             // CalculationView
             // 
+            this.CalculationView.BackColor = System.Drawing.Color.White;
             this.CalculationView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculationView.Location = new System.Drawing.Point(39, 12);
             this.CalculationView.Multiline = true;
@@ -209,11 +215,44 @@ namespace CalculatorView
             this.CalculationView.TabIndex = 15;
             this.CalculationView.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // DecimalBtn
+            // 
+            this.DecimalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DecimalBtn.Location = new System.Drawing.Point(157, 298);
+            this.DecimalBtn.Name = "DecimalBtn";
+            this.DecimalBtn.Size = new System.Drawing.Size(53, 50);
+            this.DecimalBtn.TabIndex = 16;
+            this.DecimalBtn.Text = ".";
+            this.DecimalBtn.UseVisualStyleBackColor = true;
+            // 
+            // EqualsBtn
+            // 
+            this.EqualsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EqualsBtn.Location = new System.Drawing.Point(238, 298);
+            this.EqualsBtn.Name = "EqualsBtn";
+            this.EqualsBtn.Size = new System.Drawing.Size(53, 50);
+            this.EqualsBtn.TabIndex = 17;
+            this.EqualsBtn.Text = "=";
+            this.EqualsBtn.UseVisualStyleBackColor = true;
+            // 
+            // PercentageBtn
+            // 
+            this.PercentageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PercentageBtn.Location = new System.Drawing.Point(238, 265);
+            this.PercentageBtn.Name = "PercentageBtn";
+            this.PercentageBtn.Size = new System.Drawing.Size(53, 27);
+            this.PercentageBtn.TabIndex = 18;
+            this.PercentageBtn.Text = "%";
+            this.PercentageBtn.UseVisualStyleBackColor = true;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 434);
+            this.Controls.Add(this.PercentageBtn);
+            this.Controls.Add(this.EqualsBtn);
+            this.Controls.Add(this.DecimalBtn);
             this.Controls.Add(this.CalculationView);
             this.Controls.Add(this.ResetBtn);
             this.Controls.Add(this.MultiplyBtn);
@@ -256,5 +295,8 @@ namespace CalculatorView
         private System.Windows.Forms.Button MultiplyBtn;
         private System.Windows.Forms.Button ResetBtn;
         private System.Windows.Forms.TextBox CalculationView;
+        private System.Windows.Forms.Button DecimalBtn;
+        private System.Windows.Forms.Button EqualsBtn;
+        private System.Windows.Forms.Button PercentageBtn;
     }
 }
